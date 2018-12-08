@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="YkN-gy-ghO">
             <objects>
-                <viewController id="QTV-gh-y3w" sceneMemberID="viewController">
+                <viewController id="QTV-gh-y3w" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VGs-3Z-QH7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lfL-7p-lpL" kind="show" id="bAQ-r7-oFI"/>
+                                    <action selector="nextButtonPressed:" destination="QTV-gh-y3w" eventType="touchUpInside" id="VMt-5s-gtr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-rG-kaJ" userLabel="backButton">
@@ -197,23 +197,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NP9-9O-20U"/>
                     </view>
+                    <connections>
+                        <segue destination="lfL-7p-lpL" kind="show" identifier="skillVCSegue" id="bUH-aa-Fbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIS-uY-kUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qAQ-Re-p0O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="832.79999999999995" y="116.49175412293854"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="sMq-0Y-nae">
             <objects>
-                <viewController id="lfL-7p-lpL" sceneMemberID="viewController">
+                <viewController id="lfL-7p-lpL" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="puo-7Q-3HZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="XKB-F1-3Gt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="XKB-F1-3Gt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-0A-2qZ" userLabel="Swoosh Stack View">
                                 <rect key="frame" x="128" y="40" width="119" height="75.5"/>
@@ -271,10 +273,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wTV-BS-p6a" firstAttribute="bottom" secondItem="SwL-Nl-SHH" secondAttribute="bottom" constant="20" id="2SM-Rv-1yG"/>
+                            <constraint firstItem="wTV-BS-p6a" firstAttribute="trailing" secondItem="XKB-F1-3Gt" secondAttribute="trailing" id="2lj-Wu-1V2"/>
+                            <constraint firstItem="XKB-F1-3Gt" firstAttribute="top" secondItem="puo-7Q-3HZ" secondAttribute="top" id="7db-D3-njS"/>
                             <constraint firstItem="wTV-BS-p6a" firstAttribute="trailing" secondItem="d24-gG-SBd" secondAttribute="trailing" constant="16" id="GeU-8x-22l"/>
                             <constraint firstItem="JL7-0A-2qZ" firstAttribute="top" secondItem="wTV-BS-p6a" secondAttribute="top" constant="20" id="Mkr-zC-OEn"/>
                             <constraint firstItem="SwL-Nl-SHH" firstAttribute="leading" secondItem="wTV-BS-p6a" secondAttribute="leading" constant="16" id="RsE-Ew-8TZ"/>
+                            <constraint firstAttribute="bottom" secondItem="XKB-F1-3Gt" secondAttribute="bottom" id="XGT-mM-PE7"/>
                             <constraint firstItem="JL7-0A-2qZ" firstAttribute="centerX" secondItem="puo-7Q-3HZ" secondAttribute="centerX" id="bxF-BK-z4d"/>
+                            <constraint firstItem="XKB-F1-3Gt" firstAttribute="leading" secondItem="wTV-BS-p6a" secondAttribute="leading" id="fSx-fd-orx"/>
                             <constraint firstItem="d24-gG-SBd" firstAttribute="centerX" secondItem="puo-7Q-3HZ" secondAttribute="centerX" id="hSB-Kh-1hp"/>
                             <constraint firstItem="wTV-BS-p6a" firstAttribute="trailing" secondItem="SwL-Nl-SHH" secondAttribute="trailing" constant="16" id="mXj-oN-WEz"/>
                             <constraint firstItem="d24-gG-SBd" firstAttribute="leading" secondItem="wTV-BS-p6a" secondAttribute="leading" constant="16" id="v25-f7-87R"/>
@@ -285,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R76-dh-eMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1730" y="116"/>
         </scene>
     </scenes>
     <resources>
